@@ -21,10 +21,6 @@ jobs:
           channel: "stable"
           flutter-version: "3.0.5"
 
-      - name: Upgrade flutter
-        if: steps.check_files.outputs.files_exists == 'true'
-        run: flutter upgrade && flutter --version
-
       - name: Get dependencies
         if: steps.check_files.outputs.files_exists == 'true'
         run: flutter pub get
